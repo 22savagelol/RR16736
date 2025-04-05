@@ -8,12 +8,13 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 
 import org.firstinspires.ftc.teamcode.Config.Port;
+import org.firstinspires.ftc.teamcode.Config.Pose;
 
 public class VerticalTilt {
     ServoImplEx verticalTiltServo;
     public VerticalTilt(HardwareMap hardwareMap){
         verticalTiltServo = hardwareMap.get(ServoImplEx.class, Port.VERTICAL_TILT);
-//        verticalTiltPose();
+        verticalTiltPose(Pose.verticalTiltTransfer);
     }
     private class VerticalTiltAction implements Action{
         double pose;

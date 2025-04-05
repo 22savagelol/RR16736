@@ -6,13 +6,13 @@ public class RobotConfig {
 
      public double setConfig(int pick){
         if(selection == 1){
-            //First Robot
+            //Second Robot
             config[0] = .001978956002; //inPerTick
             config[1] = 0.001476078562026779; //lateralInPerTick
             config[2] = 7838.38; //trackWidthTicks
             config[3] = 1.743513259298552; //kS
             config[4] = 0.00024448357470530834; //kV
-            config[5] = 0.00000001; //kA
+            config[5] = 0.000000000001; //kA
             config[6] = Pose.driveVelocity; //maxWheelVel
             config[7] = Pose.driveMinAccel; //minProfileAccel
             config[8] = Pose.driveMaxAccel; //maxProfileAccel
@@ -28,7 +28,7 @@ public class RobotConfig {
             config[18] =  -.0675; //perpXTicks
             return config[pick];
         } else {
-            //Second Robot
+            //First Robot
             config[0] = .001978956002; //inPerTick
             config[1] = 0.7665571658951872; //lateralInPerTick
             config[2] = 12.909184083483952; //trackWidthTicks

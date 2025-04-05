@@ -18,30 +18,34 @@ public class DriveTrain {
     }
     public void drive(double leftStickY, double leftStickX, double rightStickX, double precise, double startSpeed) {
         if(field) {
-            //take input from gamepad
-            double y = -leftStickY;
+            double y = -leftStickY; // Remember, Y stick value is reversed
             double x = leftStickX;
             double rx = rightStickX;
 
-            slow = precise * (1 - startSpeed) + startSpeed;
+            drive.localizer.update();
+            double botHeading = drive.localizer.getPose().heading.toDouble();
 
-            botHeading = drive.localizer.getPose().heading.toDouble() - Math.toRadians(90);
-            //Rotate the movement direction counter to the bot's rotation
+            // Rotate the movement direction counter to the bot's rotation
             double rotX = x * Math.cos(-botHeading) - y * Math.sin(-botHeading);
             double rotY = x * Math.sin(-botHeading) + y * Math.cos(-botHeading);
-            //counter robot imperfect strafing
-            rotX = rotX * 1.1;
 
+            rotX = rotX * 1.1;  // Counteract imperfect strafing
+
+            // Denominator is the largest motor power (absolute value) or 1
+            // This ensures all the powers maintain the same ratio,
+            // but only if at least one is out of the range [-1, 1]
             double denominator = Math.max(Math.abs(rotY) + Math.abs(rotX) + Math.abs(rx), 1);
             double frontLeftPower = (rotY + rotX + rx) / denominator;
-            double rearLeftPower = (rotY - rotX - rx) / denominator;
-            double frontRightPower = (rotY - rotX + rx) / denominator;
-            double rearRightPower = (rotY + rotX - rx) / denominator;
+            double backLeftPower = (rotY - rotX + rx) / denominator;
+            double frontRightPower = (rotY - rotX - rx) / denominator;
+            double backRightPower = (rotY + rotX - rx) / denominator;
+
+            slow = precise * (1 - startSpeed) + startSpeed;
 
             leftFront.setPower(frontLeftPower * slow);
+            leftBack.setPower(backLeftPower * slow);
             rightFront.setPower(frontRightPower * slow);
-            leftBack.setPower(rearLeftPower * slow);
-            rightBack.setPower(rearRightPower * slow);
+            rightBack.setPower(backRightPower * slow);
         } else {
             double y = leftStickY;
             double x = -leftStickX;

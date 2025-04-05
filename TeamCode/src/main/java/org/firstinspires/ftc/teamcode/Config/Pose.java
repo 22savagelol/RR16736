@@ -9,16 +9,20 @@ public class Pose {
     public static double driveMaxAngle = Math.PI * adriveMultiple; //default is Math.PI
 
     //vertical slide
-    public static double verticalSlideHighBasket = 0;
+    public static double verticalSlideHighBasket = 888;
+    public static double verticalSlideBottom = 0;
     public static double verticalVelocity = 5000;
 
     //vertical tilt
     public static double verticalTiltTransfer = .07;
     public static double verticalTiltWall = .42;
+    public static double verticalTiltBasket = .5;
 
     //vertical wrist
-    public static double verticalWristTransfer = .71;
+    public static double verticalWristTransfer = .705;
+    public static double verticalWristHover = .65;
     public static double verticalWristWall = 0;
+    public static double verticalWristBasket = .4;
 
     //vertical grabber
     public static double verticalGrabberClose = .41;
@@ -26,8 +30,9 @@ public class Pose {
     public static double verticalGrabberOpen = .66;
 
     //horizontal slide
-    public static double horizontalSlideRetract = .25;
+    public static double horizontalSlideRetract = .3;
     public static double horizontalSlideExtend = .7;
+    public static double horizontalSlideTransfer = .3;
 
     //horizontal wrist
     public static double horizontalWristIntake = .93;
@@ -39,7 +44,8 @@ public class Pose {
     public static boolean blue = false;
     public static boolean red = false;
 
-    public static double blueThreshold = 100;
-
     public static double[] yellowThreshold = {1000, 200, 1000};
+    public static double[] redThreshold = {700, 170, 300};
+    public static double[] blueThreshold = {1200, 2900, 1900};
+    public static double[] nonThreshold = {1300, 2100, 1800};
 }

@@ -9,8 +9,8 @@ public class Port {
 
     //Attachments
     public static final String HORIZONTAL_ARM = "Horizontal";
-    public static final String HORIZONTAL_SLIDE_LEFT = "HorizontalSlideLeft"; //control hub 4
-    public static final String HORIZONTAL_SLIDE_RIGHT = "HorizontalSlideRight"; //control hub port 0
+    public static final String HORIZONTAL_SLIDE_RIGHT = "HorizontalSlideRight"; //control hub 4
+    public static final String HORIZONTAL_SLIDE_LEFT = "HorizontalSlideLeft"; //control hub port 0
     public static final String HORIZONTAL_WRIST_LEFT = "HorizWristLeft"; //control hub port 2
     public static final String HORIZONTAL_WRIST_RIGHT = "HorizWristRight";
     public static final String HORIZONTAL_INTAKE = "HorizGrabber";
@@ -33,8 +33,8 @@ public class Port {
     public static final String LIME = "lime";
 
     public static final String VERTICAL_GRABBER_SENSOR = "VerticalGrabberSensor";
-    public static final String VERTICAL_RIGHT_SENSOR = "VerticalRightSensor";
-    public static final String VERTICAL_LEFT_SENSOR = "VerticalLeftSensor";
-    public static final String HORIZONTAL_RIGHT_SENSOR = "HorizontalRightSensor";
-    public static final String HORIZONTAL_LEFT_SENSOR = "HorizontalLeftSensor";
+    public static final String VERTICAL_SENSOR_RIGHT = "VerticalRightSensor";
+    public static final String VERTICAL_SENSOR_LEFT = "VerticalLeftSensor";
+    public static final String HORIZONTAL_SENSOR_RIGHT = "HorizontalRightSensor";
+    public static final String HORIZONTAL_SENSOR_LEFT = "HorizontalLeftSensor";
 }

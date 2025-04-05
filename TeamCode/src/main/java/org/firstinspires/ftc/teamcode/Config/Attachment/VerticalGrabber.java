@@ -8,12 +8,13 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 
 import org.firstinspires.ftc.teamcode.Config.Port;
+import org.firstinspires.ftc.teamcode.Config.Pose;
 
 public class VerticalGrabber {
     ServoImplEx verticalGrabber;
     public VerticalGrabber(HardwareMap hardwareMap){
         verticalGrabber = hardwareMap.get(ServoImplEx.class, Port.VERTICAL_GRABBER);
-//        verticalGrabberPose();
+        verticalGrabberPose(Pose.verticalGrabberClose);
     }
     private class VerticalGrabberAction implements Action{
         double pose;

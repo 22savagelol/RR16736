@@ -66,8 +66,8 @@ public class LimeSweet {
                 double[] pythonOutputs = result.getPythonOutput();
                 if (pythonOutputs != null && pythonOutputs.length > 0 && pythonOutputs[3] != 0) {
                     point.clear();
-                    point.add(pythonOutputs[2]);
-                    point.add(pythonOutputs[3] + 7);
+                    point.add((pythonOutputs[2] + 7.3)*-1);
+                    point.add(pythonOutputs[3]);
                     telemetry.addData("Python output X:", point.get(0));
                     telemetry.addData("Python output Y:", point.get(1));
                 } else {

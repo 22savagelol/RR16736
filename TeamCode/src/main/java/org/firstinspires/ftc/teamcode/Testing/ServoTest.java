@@ -6,17 +6,16 @@ import com.qualcomm.robotcore.hardware.AnalogInput;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 
 import org.firstinspires.ftc.teamcode.Config.Port;
-import org.firstinspires.ftc.teamcode.Config.Pose;
 
 @TeleOp(name = "ServoTest", group = "test")
 public class ServoTest extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
-        ServoImplEx leftServo = hardwareMap.get(ServoImplEx.class, Port.VERTICAL_GRABBER);
-//        ServoImplEx rightServo = hardwareMap.get(ServoImplEx.class, Port.HORIZONTAL_WRIST_RIGHT);
+        ServoImplEx leftServo = hardwareMap.get(ServoImplEx.class, Port.VERTICAL_WRIST_LEFT);
+        ServoImplEx rightServo = hardwareMap.get(ServoImplEx.class, Port.VERTICAL_WRIST_RIGHT);
 
-        AnalogInput leftSensor = hardwareMap.get(AnalogInput.class, Port.VERTICAL_LEFT_SENSOR);
-        AnalogInput rightSensor = hardwareMap.get(AnalogInput.class, Port.VERTICAL_RIGHT_SENSOR);
+        AnalogInput leftSensor = hardwareMap.get(AnalogInput.class, Port.VERTICAL_SENSOR_LEFT);
+        AnalogInput rightSensor = hardwareMap.get(AnalogInput.class, Port.VERTICAL_SENSOR_RIGHT);
 
         double pose = .5; double desireMs = 250;
         long currentTime = System.currentTimeMillis();
@@ -33,7 +32,7 @@ public class ServoTest extends LinearOpMode {
             loop[0] = currentTime - time[0];
             loop[1] = currentTime - time[1];
             leftServo.setPosition(pose);
-//            rightServo.setPosition(1-pose);
+            rightServo.setPosition(1-pose);
 
             if(gamepad1.dpad_up && loop[0] >= desireMs){
                 pose += .01;

@@ -8,13 +8,14 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.ServoImplEx;
 
 import org.firstinspires.ftc.teamcode.Config.Port;
+import org.firstinspires.ftc.teamcode.Config.Pose;
 
 public class HorizontalWrist {
     ServoImplEx horizontalWristLeft, horizontalWristRight;
     public HorizontalWrist(HardwareMap hardwareMap){
         horizontalWristLeft = hardwareMap.get(ServoImplEx.class, Port.HORIZONTAL_WRIST_LEFT);
         horizontalWristRight = hardwareMap.get(ServoImplEx.class, Port.HORIZONTAL_WRIST_RIGHT);
-//        horizontalWristPose();
+        horizontalWristPose(Pose.horizontalWristUp);
     }
     private class HorizontalWristAction implements Action{
         double pose;

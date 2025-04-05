@@ -32,6 +32,9 @@ public class VerticalSlide {
         verticalSlide1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
         verticalSlidePose(0);
+        verticalSlide1.setVelocity(Pose.verticalVelocity);
+        verticalSlide2.setVelocity(Pose.verticalVelocity);
+
     }
     private class VerticalSlideAction implements Action{
         double pose;
@@ -46,6 +49,13 @@ public class VerticalSlide {
     }
     public Action verticalSlideAction(double pose){return new VerticalSlideAction(pose);}
     public void verticalSlidePose(double pose){
+        if(pose == 0){
+            verticalSlide1.setVelocity(750);
+            verticalSlide2.setVelocity(750);
+        } else {
+            verticalSlide1.setVelocity(5000);
+            verticalSlide2.setVelocity(5000);
+        }
         verticalSlide1.setTargetPosition((int)pose);
         verticalSlide2.setTargetPosition((int)pose);
     }
