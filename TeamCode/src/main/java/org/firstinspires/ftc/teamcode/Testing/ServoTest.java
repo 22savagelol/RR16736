@@ -11,8 +11,8 @@ import org.firstinspires.ftc.teamcode.Config.Port;
 public class ServoTest extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
-        ServoImplEx leftServo = hardwareMap.get(ServoImplEx.class, Port.VERTICAL_WRIST_LEFT);
-        ServoImplEx rightServo = hardwareMap.get(ServoImplEx.class, Port.VERTICAL_WRIST_RIGHT);
+        ServoImplEx leftServo = hardwareMap.get(ServoImplEx.class, Port.HORIZONTAL_SLIDE_LEFT);
+        ServoImplEx rightServo = hardwareMap.get(ServoImplEx.class, Port.HORIZONTAL_SLIDE_RIGHT);
 
         AnalogInput leftSensor = hardwareMap.get(AnalogInput.class, Port.VERTICAL_SENSOR_LEFT);
         AnalogInput rightSensor = hardwareMap.get(AnalogInput.class, Port.VERTICAL_SENSOR_RIGHT);

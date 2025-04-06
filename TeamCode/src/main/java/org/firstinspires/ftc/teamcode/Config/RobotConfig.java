@@ -2,17 +2,17 @@ package org.firstinspires.ftc.teamcode.Config;
 
 public class RobotConfig {
     public double[] config = new double[19];
-    public static int selection = 0;
+    public static int selection = 1;
 
      public double setConfig(int pick){
         if(selection == 1){
             //Second Robot
             config[0] = .001978956002; //inPerTick
-            config[1] = 0.001476078562026779; //lateralInPerTick
+            config[1] = 0.0013674049157836488; //lateralInPerTick
             config[2] = 7838.38; //trackWidthTicks
-            config[3] = 1.743513259298552; //kS
-            config[4] = 0.00024448357470530834; //kV
-            config[5] = 0.000000000001; //kA
+            config[3] = 2.164524032498079; //kS
+            config[4] = 0.00021806514829623123; //kV
+            config[5] = 0.0000001; //kA
             config[6] = Pose.driveVelocity; //maxWheelVel
             config[7] = Pose.driveMinAccel; //minProfileAccel
             config[8] = Pose.driveMaxAccel; //maxProfileAccel
@@ -24,8 +24,8 @@ public class RobotConfig {
             config[14] = 0.0; //axialVelGain
             config[15] = 0.0; //lateralVelGain
             config[16] = 0.0; //headingVelGain
-            config[17] =  .375; //parYTicks
-            config[18] =  -.0675; //perpXTicks
+            config[17] = .375; //parYTicks
+            config[18] = -.0675; //perpXTicks
             return config[pick];
         } else {
             //First Robot

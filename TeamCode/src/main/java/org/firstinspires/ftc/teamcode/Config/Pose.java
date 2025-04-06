@@ -30,8 +30,8 @@ public class Pose {
     public static double verticalGrabberOpen = .66;
 
     //horizontal slide
-    public static double horizontalSlideRetract = .3;
-    public static double horizontalSlideExtend = .7;
+    public static double horizontalSlideRetract = .3; // 7.5 inches
+    public static double horizontalSlideExtend = .7; //17  inches
     public static double horizontalSlideTransfer = .3;
 
     //horizontal wrist
